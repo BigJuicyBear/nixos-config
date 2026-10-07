@@ -35,7 +35,6 @@ gestures {
         off
     }
 }
-// ── Layout ─────────────────────────────────────────────────────────────────
 layout {
     gaps 12
 
@@ -74,12 +73,12 @@ spawn-at-startup "bash" "-c" "sleep 2 && noctalia-shell ipc call lockScreen lock
 window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
-    opacity 0.9
+    opacity 0.95
     draw-border-with-background false
 }
 
 window-rule {
-  opacity 0.9
+  opacity 0.95
   match app-id="ghostty"
   draw-border-with-background false
 }
@@ -108,15 +107,13 @@ binds {
 
     // ── Apps ─────────────────────────────────────────────────────────────
     Mod+Return  { spawn "ghostty"; }
-    Mod+E       { spawn "nautilus"; }
+    Mod+Shift+F { spawn "nautilus"; }
     Mod+Z       { spawn "zen-twilight"; }
-    Mod+O       { spawn "obsidian";}
     
     // ── Noctalia ─────────────────────────────────────────────────────────────
-    Mod+S       { spawn-sh "noctalia-shell ipc call launcher toggle";}
+    Mod+Space       { spawn-sh "noctalia-shell ipc call launcher toggle";}
     Mod+P       { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
     Mod+Comma   { spawn-sh "noctalia-shell ipc call settings toggle"; }
-    Mod+W       {spawn-sh "noctalia-shell ipc call wallpaper toggle";}
     Mod+Shift+Q {spawn-sh "noctalia-shell ipc call sessionMenu toggle";}
 
 
@@ -151,7 +148,6 @@ binds {
     Mod+Shift+Equal   { set-window-height "+10%"; }
     Mod+R             { switch-preset-column-width; }
     Mod+A             { maximize-column; }
-    Mod+Shift+F       { fullscreen-window; }
 
     // ── Workspaces ───────────────────────────────────────────────────────
     Mod+U             { focus-workspace-down; }
@@ -186,7 +182,7 @@ binds {
     Mod+Shift+Space   { switch-focus-between-floating-and-tiling; }
 
     // ── Close ────────────────────────────────────────────────────────────
-    Mod+Q             { close-window; }
+    Mod+W             { close-window; }
 
     // ── Media keys ───────────────────────────────────────────────────────
     XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
