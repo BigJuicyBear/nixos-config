@@ -41,7 +41,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs system; };
-          home-manager.users.cedric = import ./home/cedric/home.nix;
+          home-manager.users.wini = import ./home/wini/home.nix;
         }
       ];
     };

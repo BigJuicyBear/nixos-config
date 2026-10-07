@@ -48,7 +48,7 @@
   
   services.openssh.enable = true;
 
-  users.users.cedric ={
+  users.users.wini ={
     shell = pkgs.zsh;
   };
 
@@ -98,14 +98,14 @@
 
   services.displayManager.autoLogin = {
     enable = true;
-    user = "cedric";
+    user = "wini";
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.cedric = {
+  users.users.wini = {
     isNormalUser = true;
     description = "Cedric Martinez";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];

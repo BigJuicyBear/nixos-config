@@ -1,6 +1,6 @@
 { config, pkgs, lib, inputs, system, ... }: {
-  home.username = "cedric";
-  home.homeDirectory = "/home/cedric";
+  home.username = "wini";
+  home.homeDirectory = "/home/wini";
   home.stateVersion = "24.11";
 
   programs.home-manager.enable = true;

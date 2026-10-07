@@ -18,6 +18,6 @@
   services.pulseaudio.enable = false;
   services.displayManager.autoLogin = {
     enable = true;
-    user = "cedric";
+    user = "wini";
   };
 }

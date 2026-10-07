@@ -110,11 +110,10 @@ binds {
     Mod+Return  { spawn "ghostty"; }
     Mod+E       { spawn "nautilus"; }
     Mod+Z       { spawn "zen-twilight"; }
-    Mod+B       { spawn "brave"; }
     Mod+O       { spawn "obsidian";}
     
     // ── Noctalia ─────────────────────────────────────────────────────────────
-    Mod+Space       { spawn-sh "noctalia-shell ipc call launcher toggle";}
+    Mod+S       { spawn-sh "noctalia-shell ipc call launcher toggle";}
     Mod+P       { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
     Mod+Comma   { spawn-sh "noctalia-shell ipc call settings toggle"; }
     Mod+W       {spawn-sh "noctalia-shell ipc call wallpaper toggle";}
@@ -122,8 +121,7 @@ binds {
 
 
     // ── Screenshots ──────────────────────────────────────────────────────
-    Mod+S             { screenshot; }
-    Ctrl+Print        { screenshot-screen; }
+    Mod+Shift+S             { screenshot; }
     Alt+Print         { screenshot-window; }
 
     // ── Focus ────────────────────────────────────────────────────────────

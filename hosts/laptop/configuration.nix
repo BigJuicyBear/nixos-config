@@ -1,46 +1,56 @@
 { config, pkgs, lib, ... }:
+
 {
-  imports = [ 
+  imports = [
     ./hardware-configuration.nix
     ./normalConfig.nix
-    ./serverConfig.nix
   ];
 
-  # ===== Base =====
-  networking.hostName = "laptop";
-  networking.networkmanager.enable = true;
-  time.timeZone = "America/Tijuana";
-  i18n.defaultLocale = "en_US.UTF-8";
-
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  users.users.cedric = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-  programs.zsh.enable = true;
-
-  services.openssh.enable = true;
-
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  home-manager.backupFileExtension = "backup";
-  services.tailscale.enable = true;
+  time.timeZone = "America/Los_Angeles";
 
-  virtualisation.docker.enable = true;
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
 
-  environment.systemPackages = with pkgs; [
-    git
-    neovim 
-    ghostty 
-  ];
+  # Display manager (el autologin de wini está en normalConfig.nix)
+  services.xserver.displayManager.lightdm.enable = true;
+  services.displayManager.defaultSession = "niri";
 
-  system.stateVersion = "25.11";
+  # Impresión
+  services.printing.enable = true;
+
+  # Usuario
+  users.users."wini" = {
+    isNormalUser = true;
+    description = "wini";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      git
+      neovim
+      ghostty
+    ];
+  };
+
+  programs.firefox.enable = true;
+
+  # NO cambies esto después de la instalación inicial
+  system.stateVersion = "26.05";
 }
