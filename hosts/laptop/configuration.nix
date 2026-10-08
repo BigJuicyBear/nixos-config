@@ -36,6 +36,7 @@
 
   # Impresión
   services.printing.enable = true;
+  services.upower.enable = true;
 
   # Usuario
   users.users."wini" = {
@@ -47,10 +48,21 @@
       neovim
       ghostty
     ];
-  };
+ };
 
   programs.firefox.enable = true;
 
   # NO cambies esto después de la instalación inicial
   system.stateVersion = "26.05";
+
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "client";
+  };
+
+  networking.firewall = {
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ 41641 ];
+  };
+
 }

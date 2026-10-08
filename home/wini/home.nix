@@ -23,7 +23,7 @@
     ../../modules/mpd.nix
   ];
 
-  programs.zen-browser.enable = true;
+  # programs.zen-browser.enable = true;
 
   # symlink for the .dotfile of lazyvim
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink
@@ -44,18 +44,17 @@
   programs.git = {
     enable = true;
     settings = {
-      user.name = "Cedric Martinez";
-      user.email = "cedric.martinez@cetys.edu.mx";
+      user.name = "wini";
+      user.email = "enzoparlangem@gmail.com";
       init.defaultBranch = "main";
       # gpg.format = null;
     };
   };
 
   home.packages = with pkgs; [
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.twilight
     obsidian
     rmpc
-    brave
-    steam
     tree
   ];
 }
