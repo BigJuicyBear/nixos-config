@@ -65,4 +65,12 @@
     allowedUDPPorts = [ 41641 ];
   };
 
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  programs.zsh.enable = true;
+  users.users.wini.shell = pkgs.zsh;
+
+virtualisation.virtualbox.host.enable = true;
+users.extraGroups.vboxusers.members = [ "wini" ];
+
 }

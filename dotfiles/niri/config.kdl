@@ -115,6 +115,7 @@ binds {
     Mod+P       { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
     Mod+Comma   { spawn-sh "noctalia-shell ipc call settings toggle"; }
     Mod+Shift+Q {spawn-sh "noctalia-shell ipc call sessionMenu toggle";}
+    Mod+Shift+W {spawn-sh "noctalia-shell ipc call wallpaper toggle";}
 
 
     // ── Screenshots ──────────────────────────────────────────────────────
@@ -193,4 +194,3 @@ binds {
 }
 
 // include "./noctalia.kdl"
-

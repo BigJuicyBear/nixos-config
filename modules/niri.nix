@@ -2,14 +2,14 @@
 
   imports = [ inputs.noctalia.homeModules.default ];
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
   };
 
   home.packages = with pkgs; [
     xwayland-satellite
     wl-clipboard
-    swaylock
+#     swaylock
     nautilus
   ];
   # symlink de niri

@@ -56,5 +56,6 @@
     obsidian
     rmpc
     tree
+    virtualbox
   ];
 }
