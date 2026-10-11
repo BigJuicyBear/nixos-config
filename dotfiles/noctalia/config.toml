@@ -9,3 +9,20 @@ radius = 12
 margin_ends = 307
 margin_edge = 4
 scale = 0.85
+start = ["launcher", "workspaces"]
+center = ["clock"]
+end = ["tray", "bluetooth", "network", "volume", "battery"]
+
+[theme]
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
+
+[theme.templates]
+enable_builtin_templates = true
+builtin_ids = ["ghostty"]
+enable_community_templates = true
+community_ids = ["zen-browser"]
+
+[wallpaper]
+directory = "/home/wini/nixos-config/dotfiles/wallpapers"
