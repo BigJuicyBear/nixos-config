@@ -65,9 +65,9 @@ animations {
 }
 
 // ── Autostart ──────────────────────────────────────────────────────────────
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "bash" "-c" "sleep 2 && noctalia-shell ipc call lockScreen lock"
+spawn-at-startup "bash" "-c" "sleep 2 && noctalia msg session lock"
 
 // ── Window rules ───────────────────────────────────────────────────────────
 window-rule {
@@ -111,11 +111,11 @@ binds {
     Mod+Z       { spawn "zen-twilight"; }
     
     // ── Noctalia ─────────────────────────────────────────────────────────────
-    Mod+Space       { spawn-sh "noctalia-shell ipc call launcher toggle";}
-    Mod+P       { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
-    Mod+Comma   { spawn-sh "noctalia-shell ipc call settings toggle"; }
-    Mod+Shift+Q {spawn-sh "noctalia-shell ipc call sessionMenu toggle";}
-    Mod+Shift+W {spawn-sh "noctalia-shell ipc call wallpaper toggle";}
+    Mod+Space       { spawn-sh "noctalia msg panel-toggle launcher";}
+    Mod+P       { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Comma   { spawn-sh "noctalia msg settings-toggle"; }
+    Mod+Shift+Q {spawn-sh "noctalia msg panel-toggle session";}
+    Mod+Shift+W {spawn-sh "noctalia msg panel-toggle wallpaper";}
 
 
     // ── Screenshots ──────────────────────────────────────────────────────

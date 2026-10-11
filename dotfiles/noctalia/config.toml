@@ -1,0 +1,11 @@
+[bar]
+order = ["main"]
+
+[bar.main]
+position = "top"
+thickness = 28
+background_opacity = 0.85
+radius = 12
+margin_ends = 307
+margin_edge = 4
+scale = 0.85
