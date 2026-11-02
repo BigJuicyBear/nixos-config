@@ -73,7 +73,7 @@ spawn-at-startup "bash" "-c" "sleep 2 && noctalia msg session lock"
 window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
-    opacity 0.95
+    opacity 1.00
     draw-border-with-background false
 }
 
@@ -109,6 +109,7 @@ binds {
     Mod+Return  { spawn "ghostty"; }
     Mod+Shift+F { spawn "nautilus"; }
     Mod+Z       { spawn "zen-twilight"; }
+    Mod+O       { spawn "obsidian";}
     
     // ── Noctalia ─────────────────────────────────────────────────────────────
     Mod+Space       { spawn-sh "noctalia msg panel-toggle launcher";}

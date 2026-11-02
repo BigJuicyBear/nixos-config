@@ -7,8 +7,7 @@
 
     shellAliases = {
       gc = "sudo nix-collect-garbage -d";
-      rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#desktop";
-      laptop-rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#laptop";
+      rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#laptop";
     };
 
     oh-my-zsh = {

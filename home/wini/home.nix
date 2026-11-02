@@ -56,6 +56,12 @@
     obsidian
     rmpc
     tree
-    virtualbox
+    prismlauncher
+    (inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.openshot-qt.overrideAttrs (old: {
+     postPatch = (old.postPatch or "") + ''
+      substituteInPlace src/windows/export.py \
+          --replace-fail 'if icon:' 'if icon is not None:'
+      '';
+    }))
   ];
 }
